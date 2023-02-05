@@ -1,0 +1,26 @@
+$primary-background-color: #222;
+$secondary-background-color: #fff;
+$main-font-color: #fff;
+
+@mixin flexBox($direction: row, $align-items: center, $justify-content: center, $gap: 2rem) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $primary-background-color;
+}

@@ -1,0 +1,35 @@
+@import '../../index.scss';
+
+.slider-button-next {
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    border: none;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    svg {
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 50;
+    }
+}
+
+.slider-button-prev {
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    border: none;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+    cursor: pointer;
+
+    svg {
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 50;
+    }
+}

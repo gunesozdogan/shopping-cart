@@ -1,0 +1,34 @@
+@import '../../index.scss';
+
+.navBar {
+    background-color: #111;
+    width: 100%;
+    color: $main-font-color;
+    padding: 4rem 8rem;
+    @include flexBox(row, center, space-between);
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    ul {
+        list-style: none;
+        @include flexBox(row, center, center, 8rem);
+
+        li {
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 1rem;
+            width: 12rem;
+            @include flexBox(row, center, center, 0.5rem);
+        }
+
+        li:hover {
+            font-weight: 700;
+
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+}

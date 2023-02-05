@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #222;
+}
+
+.slider-button-next {
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  border: none;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.slider-button-next svg {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 50;
+}
+
+.slider-button-prev {
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  border: none;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(180deg);
+  cursor: pointer;
+}
+.slider-button-prev svg {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 50;
+}
