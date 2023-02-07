@@ -10,5 +10,7 @@
 }
 
 body {
-  background-color: #222;
+  background-color: #1a2938;
+  min-width: 100vw;
+  min-height: 100vh;
 }

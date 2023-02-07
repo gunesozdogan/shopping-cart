@@ -1,8 +1,14 @@
-$primary-background-color: #222;
-$secondary-background-color: #fff;
-$main-font-color: #fff;
+$primary-background-color: #1a2938;
+$secondary-background-color: #172431;
+$main-green-color: #beee11;
+$secondary-green-color: #4c6b22;
 
-@mixin flexBox($direction: row, $align-items: center, $justify-content: center, $gap: 2rem) {
+@mixin flexBox(
+    $direction: row,
+    $align-items: center,
+    $justify-content: center,
+    $gap: 2rem
+) {
     display: flex;
     flex-direction: $direction;
     align-items: $align-items;
@@ -14,7 +20,7 @@ $main-font-color: #fff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 :root {
@@ -23,4 +29,6 @@ $main-font-color: #fff;
 
 body {
     background-color: $primary-background-color;
+    min-width: 100vw;
+    min-height: 100vh;
 }

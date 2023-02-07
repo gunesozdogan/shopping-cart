@@ -1,34 +1,37 @@
 @import '../../index.scss';
+$main-font-color: #b8b6b4;
 
 .navBar {
-    background-color: #111;
+    background-color: #171a21;
     width: 100%;
     color: $main-font-color;
     padding: 4rem 8rem;
     @include flexBox(row, center, space-between);
 
-    h1 {
+    .header {
         font-size: 4rem;
+        color: $main-font-color;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 1.5px;
     }
 
     ul {
         list-style: none;
-        @include flexBox(row, center, center, 8rem);
-
-        li {
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 1rem;
-            width: 12rem;
-            @include flexBox(row, center, center, 0.5rem);
-        }
-
-        li:hover {
-            font-weight: 700;
-
-            svg {
-                fill: #fff;
-            }
-        }
+        @include flexBox(row, center, center, 6rem);
     }
+}
+
+.nav-link {
+    color: $main-font-color;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 6rem;
+    @include flexBox(row, center, center, 0.5rem);
+}
+
+.nav-link:hover {
+    font-weight: 700;
+    color: #fff;
 }

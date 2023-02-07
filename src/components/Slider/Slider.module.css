@@ -10,11 +10,21 @@
 }
 
 body {
-  background-color: #222;
+  background-color: #1a2938;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .slider-container {
-  width: 100%;
+  width: 70%;
+  max-width: 125rem;
+  min-width: 70rem;
+  height: 50rem;
+  background-color: #172431;
+  margin: 2rem auto;
+  position: relative;
+  border-radius: 3rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -23,15 +33,92 @@ body {
 }
 
 .slider {
-  margin-top: 2rem;
-  max-width: 61.6rem;
-  height: 35.3rem;
+  margin-top: 12rem;
+  width: 61rem;
   overflow: hidden;
-  position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 2rem;
+  border-radius: 0rem;
+  margin-bottom: 10rem;
+  background-color: #4e4e4e;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 .slider img {
-  width: 100%;
   height: 100%;
+}
+.slider .hidden {
+  display: none;
+}
+
+.slider-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.game-information-container {
+  color: #fff;
+  align-self: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+.game-information-container .price-outer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.game-information-container .discount-percentage {
+  font-size: 3rem;
+  color: #beee11;
+  background-color: #4c6b22;
+  padding: 3rem;
+  width: 12rem;
+  height: 8rem;
+  text-align: center;
+}
+.game-information-container .price-container {
+  font-size: 2rem;
+  background-color: #344454;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 12rem;
+  height: 8rem;
+  padding: 3rem;
+}
+.game-information-container .price-container .price-text {
+  color: #73888e;
+  text-decoration: line-through;
+}
+.game-information-container .price-container .discount-text {
+  color: #beee11;
+}
+.game-information-container .buy-button {
+  cursor: pointer;
+  background-color: rgb(113, 156, 49);
+  padding: 2rem;
+  border: none;
+  width: 16rem;
+  color: #fff;
+  font-size: 2rem;
+  border: 1px solid #000;
+  margin-right: 5rem;
+  text-decoration: none;
+  text-align: center;
+}
+.game-information-container .buy-button:hover {
+  background-color: #beee11;
+  color: #4e4e4e;
 }

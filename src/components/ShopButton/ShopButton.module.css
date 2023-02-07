@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #1a2938;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.shop-button {
+  cursor: pointer;
+  background-color: rgb(113, 156, 49);
+  padding: 2rem;
+  border: none;
+  width: 16rem;
+  color: #fff;
+  font-size: 2rem;
+  border: 1px solid #000;
+  margin-right: 5rem;
+  text-decoration: none;
+  text-align: center;
+  margin: 5rem auto;
+  display: block;
+  font-weight: bold;
+}
+
+.shop-button:hover {
+  background-color: #beee11;
+  color: #4e4e4e;
+}

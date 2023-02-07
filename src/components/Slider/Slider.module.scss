@@ -1,21 +1,94 @@
 @import '../../index.scss';
 
 .slider-container {
-    width: 100%;
+    width: 70%;
+    max-width: 125rem;
+    min-width: 70rem;
+    height: 50rem;
+    background-color: $secondary-background-color;
+    margin: 2rem auto;
+    position: relative;
+    border-radius: 3rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     @include flexBox(row, center, center);
 }
 
 .slider {
-    margin-top: 2rem;
-    max-width: 61.6rem;
-    height: 35.3rem;
+    margin-top: 12rem;
+    width: 61rem;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 2rem;
+    border-radius: 0rem;
+    margin-bottom: 10rem;
+    background-color: #4e4e4e;
+    @include flexBox(row, center, center, 0);
 
     img {
-        width: 100%;
         height: 100%;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+.slider-inner-container {
+    @include flexBox(column, center, center, 0);
+}
+
+.game-information-container {
+    color: #fff;
+    align-self: flex-start;
+    width: 100%;
+    @include flexBox(row, center, space-between, 0);
+
+    .price-outer-container {
+        @include flexBox(row, center, center, 0);
+    }
+
+    .discount-percentage {
+        font-size: 3rem;
+        color: $main-green-color;
+        background-color: #4c6b22;
+        padding: 3rem;
+        width: 12rem;
+        height: 8rem;
+        text-align: center;
+    }
+
+    .price-container {
+        font-size: 2rem;
+        background-color: #344454;
+        @include flexBox(column, center, center, 0.5rem);
+        width: 12rem;
+        height: 8rem;
+        padding: 3rem;
+
+        .price-text {
+            color: #73888e;
+            text-decoration: line-through;
+        }
+
+        .discount-text {
+            color: $main-green-color;
+        }
+    }
+
+    .buy-button {
+        cursor: pointer;
+        background-color: rgb(113, 156, 49);
+        padding: 2rem;
+        border: none;
+        width: 16rem;
+        color: #fff;
+        font-size: 2rem;
+        border: 1px solid #000;
+        margin-right: 5rem;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .buy-button:hover {
+        background-color: $main-green-color;
+        color: #4e4e4e;
     }
 }

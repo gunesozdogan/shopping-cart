@@ -1,13 +1,14 @@
 import styles from './SliderButton.module.css';
 
-const SliderButton = (props) => {
+const SliderButton = ({ direction, moveSlide }) => {
     return (
         <button
             className={
-                props.direction === 'next'
+                direction === 'next'
                     ? styles['slider-button-next']
                     : styles['slider-button-prev']
             }
+            onClick={moveSlide}
         >
             <svg
                 height="32px"

@@ -1,0 +1,23 @@
+@import '../../index.scss';
+
+.shop-button {
+    cursor: pointer;
+    background-color: rgb(113, 156, 49);
+    padding: 2rem;
+    border: none;
+    width: 16rem;
+    color: #fff;
+    font-size: 2rem;
+    border: 1px solid #000;
+    margin-right: 5rem;
+    text-decoration: none;
+    text-align: center;
+    margin: 5rem auto;
+    display: block;
+    font-weight: bold;
+}
+
+.shop-button:hover {
+    background-color: $main-green-color;
+    color: #4e4e4e;
+}

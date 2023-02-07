@@ -10,18 +10,26 @@
 }
 
 body {
-  background-color: #222;
+  background-color: #1a2938;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .slider-button-next {
   background: transparent;
-  border-radius: 50%;
   position: absolute;
   border: none;
   top: 50%;
-  right: 0;
+  right: 2%;
   transform: translateY(-50%);
+  background-color: #344454;
+  padding: 1rem;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 .slider-button-next svg {
   fill: #fff;
@@ -31,13 +39,19 @@ body {
 
 .slider-button-prev {
   background: transparent;
-  border-radius: 50%;
   position: absolute;
   border: none;
   top: 50%;
-  left: 0;
+  left: 2%;
   transform: translateY(-50%) rotate(180deg);
+  background-color: #344454;
+  padding: 1rem;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 .slider-button-prev svg {
   fill: #fff;

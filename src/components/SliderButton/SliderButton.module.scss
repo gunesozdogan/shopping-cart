@@ -2,13 +2,15 @@
 
 .slider-button-next {
     background: transparent;
-    border-radius: 50%;
     position: absolute;
     border: none;
     top: 50%;
-    right: 0;
+    right: 2%;
     transform: translateY(-50%);
+    background-color: #344454;
+    padding: 1rem;
     cursor: pointer;
+    @include flexBox(row);
 
     svg {
         fill: #fff;
@@ -19,13 +21,15 @@
 
 .slider-button-prev {
     background: transparent;
-    border-radius: 50%;
     position: absolute;
     border: none;
     top: 50%;
-    left: 0;
+    left: 2%;
     transform: translateY(-50%) rotate(180deg);
+    background-color: #344454;
+    padding: 1rem;
     cursor: pointer;
+    @include flexBox(row);
 
     svg {
         fill: #fff;
