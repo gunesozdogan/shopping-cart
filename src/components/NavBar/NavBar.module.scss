@@ -1,9 +1,15 @@
 @import '../../index.scss';
-$main-font-color: #b8b6b4;
+$main-font-color: #c7c7c7;
+
+.container {
+    width: 100%;
+    background-color: #171a21;
+    @include flexBox();
+}
 
 .navBar {
-    background-color: #171a21;
-    width: 100%;
+    min-width: 90rem;
+    width: 65%;
     color: $main-font-color;
     padding: 4rem 8rem;
     @include flexBox(row, center, space-between);
@@ -18,7 +24,7 @@ $main-font-color: #b8b6b4;
 
     ul {
         list-style: none;
-        @include flexBox(row, center, center, 6rem);
+        @include flexBox(row, center, center, 3rem);
     }
 }
 

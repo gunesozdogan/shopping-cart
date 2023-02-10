@@ -1,11 +1,15 @@
+import styles from './Slider.module.css';
+import SliderButton from '../SliderButton/SliderButton';
 import milesMoralesImg from '../../assets/games/milesMorales.jpg';
 import spidermanImg from '../../assets/games/spidermanRemastered.jpg';
 import lastOfUsImg from '../../assets/games/lastOfUs.jpg';
 import destinyImg from '../../assets/games/destiny2.jpg';
-import styles from './Slider.module.css';
-import SliderButton from '../SliderButton/SliderButton';
+
+import uuid from 'react-uuid';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../store/cartSlice';
 
 const gamesObj = [
     {
@@ -13,28 +17,39 @@ const gamesObj = [
         img: milesMoralesImg,
         price: 24,
         discount: 30,
+        onSlider: true,
+        id: uuid(),
     },
     {
         name: 'Marvel’s Spider-Man Remastered',
         img: spidermanImg,
         price: 24,
         discount: 25,
+        onSlider: true,
+        id: uuid(),
     },
     {
         name: 'The Last of Us™ Part I',
         img: lastOfUsImg,
         price: 36,
         discount: 10,
+        onSlider: true,
+        id: uuid(),
     },
     {
         name: 'Destiny 2',
         img: destinyImg,
         price: 28,
         discount: 15,
+        onSlider: true,
+        id: uuid(),
     },
 ];
 
 const Slider = () => {
+    const dispatch = useDispatch();
+    const cart = useSelector((state) => state.cart);
+    console.log(cart);
     const [games, setGames] = useState(gamesObj);
 
     const nextSlide = () => {
@@ -49,6 +64,10 @@ const Slider = () => {
         copyGames.push(copyGames.shift());
 
         setGames(copyGames);
+    };
+
+    const buyHandler = (e) => {
+        dispatch(cartActions.remove(e.target['data-key']));
     };
 
     return (
@@ -95,6 +114,7 @@ const Slider = () => {
                                 <Link
                                     to="/gameId"
                                     className={styles['buy-button']}
+                                    onClick={buyHandler}
                                 >
                                     Buy Now
                                 </Link>
