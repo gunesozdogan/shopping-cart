@@ -69,3 +69,36 @@ body {
   font-weight: 700;
   color: #fff;
 }
+
+.cart-container-visible {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.cart-container-visible .nav-link {
+  color: #fff;
+}
+.cart-container-visible .hidden {
+  display: none;
+}
+.cart-container-visible span {
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: #4c6b22;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.cart-container-visible:hover {
+  background-color: rgb(113, 156, 49);
+}
+.cart-container-visible:hover span {
+  background-color: #1a2938;
+}

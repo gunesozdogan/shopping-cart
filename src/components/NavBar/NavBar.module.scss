@@ -41,3 +41,32 @@ $main-font-color: #c7c7c7;
     font-weight: 700;
     color: #fff;
 }
+
+.cart-container-visible {
+    padding: 1rem;
+    @include flexBox(row, center, center, 0);
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    span {
+        padding: 1rem;
+        font-size: 2rem;
+        background-color: $secondary-green-color;
+        color: #fff;
+        @include flexBox();
+    }
+}
+
+.cart-container-visible:hover {
+    background-color: $attention-green-color;
+
+    span {
+        background-color: $primary-background-color;
+    }
+}
