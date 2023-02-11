@@ -33,3 +33,10 @@ body {
     min-width: 100vw;
     min-height: 100vh;
 }
+
+.outer-container {
+    @include flexBox(column, center, flex-start, 2rem);
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}

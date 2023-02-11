@@ -73,6 +73,16 @@
         }
     }
 
+    .hidden + .price-container {
+        width: 25rem;
+    }
+
+    .hidden + .price-container .price-text {
+        color: #fff;
+        text-decoration: none;
+        font-size: 2.5rem;
+    }
+
     .buy-button {
         cursor: pointer;
         background-color: $attention-green-color;

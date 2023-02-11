@@ -1,13 +1,15 @@
-import NavBar from '../components/NavBar/NavBar';
+import Navbar from '../components/Navbar/Navbar';
 import Slider from '../components/Slider/Slider';
 import ShopButton from '../components/ShopButton/ShopButton';
 
 const HomePage = () => {
     return (
         <>
-            <NavBar />
-            <Slider />
-            <ShopButton />
+            <div className="outer-container">
+                <Navbar />
+                <Slider />
+                <ShopButton />
+            </div>
         </>
     );
 };

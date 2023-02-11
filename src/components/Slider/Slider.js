@@ -1,79 +1,41 @@
 import styles from './Slider.module.css';
 import SliderButton from '../SliderButton/SliderButton';
-import milesMoralesImg from '../../assets/games/milesMorales.jpg';
-import spidermanImg from '../../assets/games/spidermanRemastered.jpg';
-import lastOfUsImg from '../../assets/games/lastOfUs.jpg';
-import destinyImg from '../../assets/games/destiny2.jpg';
 
-import uuid from 'react-uuid';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cartSlice';
 
-const gamesObj = [
-    {
-        name: 'Marvel’s Spider-Man: Miles Morales',
-        img: milesMoralesImg,
-        price: 24,
-        discount: 30,
-        onSlider: true,
-        id: uuid(),
-    },
-    {
-        name: 'Marvel’s Spider-Man Remastered',
-        img: spidermanImg,
-        price: 24,
-        discount: 25,
-        onSlider: true,
-        id: uuid(),
-    },
-    {
-        name: 'The Last of Us™ Part I',
-        img: lastOfUsImg,
-        price: 36,
-        discount: 10,
-        onSlider: true,
-        id: uuid(),
-    },
-    {
-        name: 'Destiny 2',
-        img: destinyImg,
-        price: 28,
-        discount: 15,
-        onSlider: true,
-        id: uuid(),
-    },
-];
-
 const Slider = () => {
     const dispatch = useDispatch();
-    const cart = useSelector((state) => state.cart);
-    console.log(cart);
-    const [games, setGames] = useState(gamesObj);
+    const games = useSelector(state => state.games);
+
+    const [sliderGames, setSliderGames] = useState(
+        games.filter(game => game.onSlider === true)
+    );
 
     const nextSlide = () => {
-        const copyGames = [...games];
+        const copyGames = [...sliderGames];
         copyGames.unshift(copyGames.pop());
 
-        setGames(copyGames);
+        setSliderGames(copyGames);
     };
 
     const prevSlide = () => {
-        const copyGames = [...games];
+        const copyGames = [...sliderGames];
         copyGames.push(copyGames.shift());
 
-        setGames(copyGames);
+        setSliderGames(copyGames);
     };
 
-    const buyHandler = (e) => {
+    const buyHandler = e => {
         dispatch(cartActions.remove(e.target['data-key']));
     };
 
     return (
         <div className={styles['slider-container']}>
             <div className={styles.slider}>
-                {games.map((game, index) => {
+                {sliderGames.map((game, index) => {
                     return (
                         <div
                             key={index}
@@ -92,7 +54,9 @@ const Slider = () => {
                                 >
                                     <div
                                         className={
-                                            styles['discount-percentage']
+                                            game.discount
+                                                ? styles['discount-percentage']
+                                                : styles.hidden
                                         }
                                     >
                                         {`${-game.discount}%`}
@@ -101,7 +65,13 @@ const Slider = () => {
                                         <p className={styles['price-text']}>
                                             {'$' + game.price.toFixed(2)}
                                         </p>
-                                        <p className={styles['discount-text']}>
+                                        <p
+                                            className={
+                                                game.discount
+                                                    ? styles['discount-text']
+                                                    : styles.hidden
+                                            }
+                                        >
                                             {'$' +
                                                 (
                                                     (game.price *

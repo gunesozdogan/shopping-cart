@@ -15,6 +15,17 @@ body {
   min-height: 100vh;
 }
 
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .slider-container {
   width: 70%;
   max-width: 125rem;
@@ -104,6 +115,14 @@ body {
 }
 .game-information-container .price-container .discount-text {
   color: #beee11;
+}
+.game-information-container .hidden + .price-container {
+  width: 25rem;
+}
+.game-information-container .hidden + .price-container .price-text {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.5rem;
 }
 .game-information-container .buy-button {
   cursor: pointer;
