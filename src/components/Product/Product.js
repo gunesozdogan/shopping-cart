@@ -1,11 +1,11 @@
 import styles from './Product.module.css';
+import { Link } from 'react-router-dom';
 
 const Product = props => {
-    const { name, id, img, price, discount } = props.game;
+    const { name, id, img, urlName, price, discount } = props.game;
 
-    console.log(name);
     return (
-        <div key={id} className={styles.container}>
+        <Link to={`/${id}/${urlName}`} className={styles.container}>
             <img src={img} alt={name} />
             <div className={styles['price-container']}>
                 <span className={discount ? styles.discount : styles.hidden}>
@@ -20,7 +20,7 @@ const Product = props => {
                     ${((price * (100 - discount)) / 100).toFixed(2)}
                 </span>
             </div>
-        </div>
+        </Link>
     );
 };
 

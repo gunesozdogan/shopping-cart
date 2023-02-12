@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-    const cart = useSelector((state) => state.cart);
+    const cart = useSelector(state => state.cart);
 
     return (
         <div className={styles.container}>
@@ -13,17 +13,17 @@ const Navbar = () => {
                 </Link>
                 <nav>
                     <ul>
-                        <li>
+                        <li className={styles['ul-link']}>
                             <Link className={styles['nav-link']} to="/">
                                 Home
                             </Link>
                         </li>
-                        <li>
+                        <li className={styles['ul-link']}>
                             <Link className={styles['nav-link']} to="/store">
                                 Store
                             </Link>
                         </li>
-                        <li>
+                        <li className={styles['ul-link']}>
                             <div
                                 className={
                                     cart.length

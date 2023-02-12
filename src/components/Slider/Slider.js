@@ -1,35 +1,40 @@
 import styles from './Slider.module.css';
 import SliderButton from '../SliderButton/SliderButton';
 
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { cartActions } from '../../store/cartSlice';
+import { storeActions } from '../../store/storeSlice';
+
+const getData = async () => {
+    const response = await fetch(
+        'https://game-field-b452c-default-rtdb.firebaseio.com/games.json'
+    );
+    const data = await response.json();
+
+    return data;
+};
 
 const Slider = () => {
+    const sliderGames = useSelector(state => state.store.sliderGames);
     const dispatch = useDispatch();
-    const games = useSelector(state => state.games);
 
-    const [sliderGames, setSliderGames] = useState(
-        games.filter(game => game.onSlider === true)
-    );
+    useEffect(() => {
+        const setGames = async () => {
+            const games = await getData();
+
+            dispatch(storeActions.setGames(games));
+        };
+
+        setGames();
+    }, [dispatch]);
 
     const nextSlide = () => {
-        const copyGames = [...sliderGames];
-        copyGames.unshift(copyGames.pop());
-
-        setSliderGames(copyGames);
+        dispatch(storeActions.nextSlide());
     };
 
     const prevSlide = () => {
-        const copyGames = [...sliderGames];
-        copyGames.push(copyGames.shift());
-
-        setSliderGames(copyGames);
-    };
-
-    const buyHandler = e => {
-        dispatch(cartActions.remove(e.target['data-key']));
+        dispatch(storeActions.prevSlide());
     };
 
     return (
@@ -45,7 +50,10 @@ const Slider = () => {
                                     : styles['slider-inner-container']
                             }
                         >
-                            <img src={game.img} alt="game" />
+                            <img
+                                src={'../assets/games/' + game.img}
+                                alt="game"
+                            />
                             <div
                                 className={styles['game-information-container']}
                             >
@@ -84,7 +92,6 @@ const Slider = () => {
                                 <Link
                                     to="/gameId"
                                     className={styles['buy-button']}
-                                    onClick={buyHandler}
                                 >
                                     Buy Now
                                 </Link>

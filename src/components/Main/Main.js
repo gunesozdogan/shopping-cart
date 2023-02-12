@@ -9,7 +9,7 @@ const Main = () => {
     return (
         <main className={styles.main}>
             {games.map(game => {
-                return <Product game={game}></Product>;
+                return <Product key={game.id} game={game}></Product>;
             })}
         </main>
     );

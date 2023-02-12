@@ -27,7 +27,7 @@ body {
 }
 
 .main {
-  width: 60%;
+  width: 65%;
   flex: 1;
   min-width: 75rem;
   display: grid;

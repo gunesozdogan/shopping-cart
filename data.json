@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Marvel’s Spider-Man: Miles Morales",
+        "price": 24,
+        "discount": 30,
+        "urlName": "spiderman-miles-morales",
+        "img": "milesMorales.jpg",
+        "tags": ["Open World", "Superhero", "Action", "Singleplayer"]
+    },
+    {
+        "name": "Marvel’s Spider-Man Remastered",
+        "price": 24,
+        "discount": 0,
+        "urlName": "spiderman-remastered",
+        "img": "spiderManRemastered.jpg",
+        "tags": ["Open World", "Superhero", "Action", "Singleplayer"]
+    },
+    {
+        "name": "EA SPORTS™ FIFA 23",
+        "price": 16,
+        "discount": 12,
+        "urlName": "fifa-2023",
+        "img": "fifa2023.jpg",
+        "tags": ["Football", "eSports", "Sports"]
+    },
+    {
+        "name": "The Last of Us™ Part I",
+        "price": 36,
+        "discount": 10,
+        "urlName": "the-last-of-us-part1",
+        "img": "lastOfUs.jpg",
+        "tags": ["Action", "Adventure", "Zombies", "Story Rich"]
+    },
+    {
+        "name": "Call of Duty®: Modern Warfare® II",
+        "price": 50,
+        "discount": 25,
+        "urlName": "call-of-duty-modern-warfare-2",
+        "img": "MW2.jpg",
+        "tags": ["FPS", "Multiplayer", "Action", "Singleplayer", "Shooter"]
+    },
+    {
+        "name": "Destiny 2",
+        "price": 28,
+        "discount": 15,
+        "urlName": "destiny-2",
+        "img": "destiny2.jpg",
+        "tags": ["Open World", "FPS", "Shooter"]
+    }
+]

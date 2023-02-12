@@ -2,29 +2,33 @@
 
 $product-container-background-color: #2a475e;
 
-.container {
+.container:link,
+.container:visited {
     cursor: pointer;
     max-width: 40rem;
     @include flexBox(column, center, flex-start, 0rem);
     background: #2a475e;
+    text-decoration: none;
 
     img {
         width: 100%;
     }
 }
 
-.container:hover {
+.container:hover,
+.container:active {
     background: linear-gradient(
         rgba(81, 107, 131, 0.7),
         rgb(129, 164, 197),
-        url(../../assets/layout/product-background.jpg)
+        url(../../../public/assets/layout/product-background.jpg)
     );
     filter: brightness(1.25);
 }
 
 .price-container {
     width: 100%;
-    height: 100%;
+    flex: 1;
+    padding: 2rem;
     @include flexBox(row, stretch, flex-start, 0);
 
     span {
