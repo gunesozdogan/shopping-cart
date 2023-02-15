@@ -5,7 +5,6 @@ $product-container-background-color: #2a475e;
 .container:link,
 .container:visited {
     cursor: pointer;
-    max-width: 40rem;
     @include flexBox(column, center, flex-start, 0rem);
     background: #2a475e;
     text-decoration: none;
@@ -23,6 +22,16 @@ $product-container-background-color: #2a475e;
         url(../../../public/assets/layout/product-background.jpg)
     );
     filter: brightness(1.25);
+}
+
+.product-name {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-top: 1.8rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
 }
 
 .price-container {

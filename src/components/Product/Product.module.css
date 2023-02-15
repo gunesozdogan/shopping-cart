@@ -29,7 +29,6 @@ body {
 .container:link,
 .container:visited {
   cursor: pointer;
-  max-width: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,6 +46,16 @@ body {
 .container:active {
   background: linear-gradient(rgba(81, 107, 131, 0.7), rgb(129, 164, 197), url(../../../public/assets/layout/product-background.jpg));
   filter: brightness(1.25);
+}
+
+.product-name {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-top: 1.8rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
 }
 
 .price-container {

@@ -37,10 +37,10 @@ body {
 }
 
 .Navbar {
-  min-width: 90rem;
+  min-width: 75rem;
   width: 65%;
   color: #cbcaca;
-  padding: 4rem 8rem;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;

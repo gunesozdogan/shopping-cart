@@ -1,0 +1,36 @@
+@import '../../index.scss';
+
+.sidebar {
+    width: 16.5%;
+    padding: 10rem 0 0 4rem;
+    padding-top: 10rem;
+    @include flexBox(column, flex-start, flex-start, 2rem);
+    align-self: stretch;
+
+    span {
+        width: 90%;
+        border-top: 1px solid #66c0f4;
+        padding-top: 2rem;
+        font-size: 1.8rem;
+        color: #c6d4df;
+    }
+
+    ul {
+        list-style: none;
+        width: 100%;
+        @include flexBox(column, flex-start, flex-start, 1.5rem);
+
+        button {
+            color: #66c0f4;
+            font-size: 1.5rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover,
+        .active {
+            color: #c6d4df;
+        }
+    }
+}

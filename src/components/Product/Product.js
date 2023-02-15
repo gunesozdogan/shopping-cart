@@ -2,11 +2,12 @@ import styles from './Product.module.css';
 import { Link } from 'react-router-dom';
 
 const Product = props => {
-    const { name, id, img, urlName, price, discount } = props.game;
+    const { name, id, urlName, price, discount } = props.game;
 
     return (
         <Link to={`/${id}/${urlName}`} className={styles.container}>
-            <img src={img} alt={name} />
+            <img src={'../assets/games/' + urlName + '.jpg'} alt={name} />
+            <h2 className={styles['product-name']}>{name}</h2>
             <div className={styles['price-container']}>
                 <span className={discount ? styles.discount : styles.hidden}>
                     {-discount}%

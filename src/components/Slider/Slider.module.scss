@@ -83,7 +83,8 @@
         font-size: 2.5rem;
     }
 
-    .buy-button {
+    .buy-button:link,
+    .buy-button:visited {
         cursor: pointer;
         background-color: $attention-green-color;
         padding: 2rem;
@@ -97,7 +98,8 @@
         text-align: center;
     }
 
-    .buy-button:hover {
+    .buy-button:hover,
+    .buy-button:active {
         background-color: $main-green-color;
         color: #4e4e4e;
     }

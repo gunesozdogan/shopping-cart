@@ -1,33 +1,13 @@
 import styles from './Slider.module.css';
 import SliderButton from '../SliderButton/SliderButton';
 
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { storeActions } from '../../store/storeSlice';
 
-const getData = async () => {
-    const response = await fetch(
-        'https://game-field-b452c-default-rtdb.firebaseio.com/games.json'
-    );
-    const data = await response.json();
-
-    return data;
-};
-
 const Slider = () => {
     const sliderGames = useSelector(state => state.store.sliderGames);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        const setGames = async () => {
-            const games = await getData();
-
-            dispatch(storeActions.setGames(games));
-        };
-
-        setGames();
-    }, [dispatch]);
 
     const nextSlide = () => {
         dispatch(storeActions.nextSlide());
@@ -43,7 +23,7 @@ const Slider = () => {
                 {sliderGames.map((game, index) => {
                     return (
                         <div
-                            key={index}
+                            key={game.id}
                             className={
                                 index !== 0
                                     ? styles.hidden
@@ -51,7 +31,7 @@ const Slider = () => {
                             }
                         >
                             <img
-                                src={'../assets/games/' + game.img}
+                                src={'../assets/games/' + game.urlName + '.jpg'}
                                 alt="game"
                             />
                             <div
