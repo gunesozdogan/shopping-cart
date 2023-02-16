@@ -4,7 +4,7 @@
         "price": 24,
         "discount": 30,
         "urlName": "spiderman-miles-morales",
-        "tags": ["Open World", "Superhero", "Action", "Singleplayer"],
+        "tags": ["Superhero", "Open World", "Action", "Singleplayer"],
         "description": "After the events of Marvel’s Spider-Man Remastered, teenage Miles Morales is adjusting to his new home while following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. When a fierce power struggle threatens to destroy his home, Miles must take up the mantle of Spider-Man and own it.",
         "id": 0
     },
@@ -13,7 +13,7 @@
         "price": 24,
         "discount": 0,
         "urlName": "spiderman-remastered",
-        "tags": ["Open World", "Superhero", "Action", "Singleplayer"],
+        "tags": ["Superhero", "Open World", "Action", "Singleplayer"],
         "description": "In Marvel’s Spider-Man Remastered, the worlds of Peter Parker and Spider-Man collide in an original action-packed story. Play as an experienced Peter Parker, fighting big crime and iconic villains in Marvel’s New York. Web-swing through vibrant neighborhoods and defeat villains with epic takedowns.",
         "id": 1
     },
@@ -31,7 +31,7 @@
         "price": 36,
         "discount": 10,
         "urlName": "the-last-of-us-part-1",
-        "tags": ["Action", "Adventure", "Zombies", "Story Rich"],
+        "tags": ["Zombies", "Action", "Adventure", "Story Rich"],
         "description": "Experience the emotional storytelling and unforgettable characters in The Last of Us™, winner of over 200 Game of the Year awards.",
         "id": 3
     },
@@ -40,7 +40,7 @@
         "price": 50,
         "discount": 25,
         "urlName": "call-of-duty-modern-warfare-2",
-        "tags": ["FPS", "Multiplayer", "Action", "Singleplayer", "Shooter"],
+        "tags": ["Action", "FPS", "Multiplayer", "Singleplayer", "Shooter"],
         "description": "Call of Duty®: Modern Warfare® II drops players into an unprecedented global conflict that features the return of the iconic Operators of Task Force 141.",
         "id": 4
     },
@@ -49,7 +49,7 @@
         "price": 28,
         "discount": 15,
         "urlName": "destiny-2",
-        "tags": ["Open World", "FPS", "Shooter"],
+        "tags": ["FPS", "Open World", "Shooter"],
         "description": "Destiny 2 is an action MMO with a single evolving world that you and your friends can join anytime, anywhere.",
         "id": 5
     },
@@ -58,7 +58,7 @@
         "price": 35,
         "discount": 0,
         "urlName": "elden-ring",
-        "tags": ["Open World", "RPG", "Dark Fantasy"],
+        "tags": ["RPG", "Open World", "Dark Fantasy"],
         "description": "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
         "id": 6
     },
@@ -85,7 +85,7 @@
         "price": 27,
         "discount": 20,
         "urlName": "pubg",
-        "tags": ["Survival", "Shooter", "Multiplayer"],
+        "tags": ["Shooter", "Survival", "Multiplayer"],
         "description": "Land on strategic locations, loot weapons and supplies, and survive to become the last team standing across various, diverse Battlegrounds. Squad up and join the Battlegrounds for the original Battle Royale experience that only PUBG: BATTLEGROUNDS can.",
         "id": 9
     },
@@ -103,7 +103,7 @@
         "price": 6,
         "discount": 33,
         "urlName": "skyrim",
-        "tags": ["MMORPG", "Singleplayer", "Open World", "Adventure", "RPG"],
+        "tags": ["RPG", "Open World", "MMORPG", "Singleplayer", "Adventure"],
         "description": "Winner of more than 200 Game of the Year Awards, Skyrim Special Edition brings the epic fantasy to life in stunning detail. The Special Edition includes the critically acclaimed game and add-ons with all-new features like remastered art and effects, volumetric god rays, dynamic depth of field, screen-space",
         "id": 11
     }

@@ -70,7 +70,7 @@ const Slider = () => {
                                     </div>
                                 </div>
                                 <Link
-                                    to="/gameId"
+                                    to={`/${game.id}/${game.urlName}`}
                                     className={styles['buy-button']}
                                 >
                                     Buy Now

@@ -7,7 +7,7 @@
     height: 50rem;
     background-color: $secondary-background-color;
     margin: 2rem auto;
-    position: relative;
+
     border-radius: 3rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     @include flexBox(row, center, center);
@@ -17,6 +17,7 @@
     margin-top: 12rem;
     width: 61rem;
     overflow: hidden;
+    position: relative;
     border-radius: 0rem;
     margin-bottom: 10rem;
     background-color: #4e4e4e;

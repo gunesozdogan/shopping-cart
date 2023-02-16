@@ -1,0 +1,77 @@
+@import '../../index.scss';
+
+.recommender-outer-container {
+    margin: 10rem auto;
+    min-width: 75rem;
+    width: 65%;
+    @include flexBox(column, center, flex-start, 2rem);
+
+    h2 {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    .recommender {
+        margin: 0 auto;
+        position: relative;
+        @include flexBox(row, center, center, 4rem);
+        overflow: hidden;
+        max-width: 120rem;
+        width: 100%;
+
+        .recommender-product-container:link,
+        .recommender-product-container:visited {
+            width: 50%;
+            background-color: $secondary-background-color;
+            text-decoration: none;
+            @include flexBox(column, flex-start, center, 0);
+        }
+
+        .recommender-product-container:hover,
+        .recommender-product-container:active {
+            filter: brightness(1.25);
+        }
+    }
+
+    img {
+        width: 100%;
+        flex: 3;
+    }
+
+    .price-container {
+        width: 30%;
+        height: clamp(5rem, 4vw, 6.5rem);
+        @include flexBox(row, stretch, flex-start, 0);
+
+        .price-left {
+            padding: 2rem 2rem;
+            color: $main-green-color;
+            font-size: clamp(1.5rem, 1.5vw, 2rem);
+            background-color: $secondary-green-color;
+            flex: 1;
+            @include flexBox(column, center, center, 0);
+        }
+
+        .price-right {
+            background-color: #344454;
+            padding: 1rem 2rem;
+            font-size: clamp(1.5rem, 1.5vw, 2rem);
+            flex: 1;
+            @include flexBox(column, center, center, 0.5rem);
+
+            .price {
+                color: #73888e;
+                text-decoration: line-through;
+            }
+
+            .discounted-price {
+                color: $main-green-color;
+            }
+        }
+    }
+}
+
+.slider-button-prev {
+    width: 100rem;
+}

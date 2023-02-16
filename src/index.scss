@@ -17,27 +17,3 @@ $attention-green-color: rgb(113, 156, 49);
     justify-content: $justify-content;
     gap: $gap;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-:root {
-    font-size: 62.5%;
-}
-
-body {
-    background-color: $primary-background-color;
-    min-width: 100vw;
-    min-height: 100vh;
-}
-
-.outer-container {
-    @include flexBox(column, center, flex-start, 2rem);
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-}
