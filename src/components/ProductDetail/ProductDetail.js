@@ -39,10 +39,27 @@ const ProductDetail = ({ game }) => {
                             })}
                         </ul>
                     </div>
-
-                    <button className={styles['add-to-cart']}>
-                        Add to Cart
-                    </button>
+                    <div className={styles['product-detail-end']}>
+                        <div className={styles['price-container']}>
+                            <div className={styles['price-container-left']}>
+                                <span>{`-${game.discount}%`}</span>
+                            </div>
+                            <div className={styles['price-container-right']}>
+                                <span
+                                    className={styles.price}
+                                >{`$${game.price.toFixed(2)}`}</span>
+                                <span
+                                    className={styles['discounted-price']}
+                                >{`$${(
+                                    (game.price * (100 - game.discount)) /
+                                    100
+                                ).toFixed(2)}`}</span>
+                            </div>
+                        </div>
+                        <button className={styles['add-to-cart']}>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
             <Recommender relatedGames={relatedGames} />

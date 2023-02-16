@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import SliderButton from '../SliderButton/SliderButton';
 import styles from './Recommender.module.css';
 
 const Recommender = ({ relatedGames }) => {
@@ -20,31 +19,41 @@ const Recommender = ({ relatedGames }) => {
                                 alt=""
                             />
                             <div className={styles['price-container']}>
-                                <div className={styles['price-left']}>
+                                <div
+                                    className={
+                                        game.discount
+                                            ? styles['price-left']
+                                            : styles.hidden
+                                    }
+                                >
                                     <span className={styles['discount']}>
                                         {`-${game.discount}%`}
                                     </span>
                                 </div>
                                 <div className={styles['price-right']}>
-                                    <span className={styles.price}>
-                                        {game.price.toFixed(2)}
+                                    <span
+                                        className={
+                                            game.discount
+                                                ? styles.price
+                                                : styles.hidden
+                                        }
+                                    >
+                                        {`$${game.price.toFixed(2)}`}
                                     </span>
                                     <span
                                         className={styles['discounted-price']}
                                     >
-                                        {(
+                                        {`$${(
                                             (game.price *
                                                 (100 - game.discount)) /
                                             100
-                                        ).toFixed(2)}
+                                        ).toFixed(2)}`}
                                     </span>
                                 </div>
                             </div>
                         </Link>
                     );
                 })}
-                <SliderButton direction="next" />
-                <SliderButton direction="prev" />
             </div>
         </div>
     );

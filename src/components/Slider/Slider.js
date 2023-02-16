@@ -79,9 +79,9 @@ const Slider = () => {
                         </div>
                     );
                 })}
-                <SliderButton direction="next" moveSlide={nextSlide} />
-                <SliderButton direction="prev" moveSlide={prevSlide} />
             </div>
+            <SliderButton direction="next" moveSlide={nextSlide} />
+            <SliderButton direction="prev" moveSlide={prevSlide} />
         </div>
     );
 };

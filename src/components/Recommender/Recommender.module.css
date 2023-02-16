@@ -12,6 +12,10 @@
   color: #fff;
   font-size: 3rem;
   font-weight: 400;
+  width: 35%;
+  border-bottom: 1px solid #cbcbcb;
+  padding-bottom: 1rem;
+  text-align: center;
 }
 .recommender-outer-container .recommender {
   margin: 0 auto;
@@ -83,7 +87,11 @@
 .recommender-outer-container .price-container .price-right .discounted-price {
   color: #beee11;
 }
-
-.slider-button-prev {
-  width: 100rem;
+.recommender-outer-container .price-container .hidden {
+  display: none;
+}
+.recommender-outer-container .price-container .hidden + .discounted-price {
+  color: #fff;
+  width: 100px;
+  text-align: center;
 }
