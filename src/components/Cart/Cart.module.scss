@@ -1,0 +1,80 @@
+@import '../../index.scss';
+
+.cart-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    overflow: auto;
+}
+
+.cart-container {
+    background-color: $secondary-background-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 35%;
+    min-width: 45rem;
+    @include flexBox(column, center, flex-start);
+
+    .header {
+        padding: 4rem;
+        @include flexBox(row, center, space-between);
+
+        h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 2%;
+            right: 3%;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            svg {
+                stroke-width: 2px;
+                stroke: #fff;
+                fill: #fff;
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        .close-btn:hover {
+            svg {
+                stroke-width: 4px;
+            }
+        }
+    }
+}
+
+.cart-game-container {
+    @include flexBox(row, center, center, 2rem);
+    padding: 0 2rem;
+
+    img {
+        width: 30%;
+    }
+
+    .game-name {
+        color: #fff;
+        font-size: clamp(1.8rem, 1.2vw, 2.2rem);
+        width: 50%;
+    }
+
+    .game-price {
+        font-size: 2.5rem;
+        color: $main-green-color;
+    }
+}
+
+.hidden {
+    display: none;
+}

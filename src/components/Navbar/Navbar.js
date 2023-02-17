@@ -1,9 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { cartActions } from '../../store/cartSlice';
+
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-    const cart = useSelector(state => state.cart);
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart.games);
+
+    const cartClickHandler = () => {
+        dispatch(cartActions.switchDisplay());
+    };
 
     return (
         <div className={styles.container}>
@@ -24,23 +31,23 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className={styles['ul-link']}>
-                            <div
+                            <button
+                                onClick={cartClickHandler}
                                 className={
                                     cart.length
                                         ? styles['cart-container-visible']
                                         : styles['cart-container']
                                 }
                             >
-                                <Link className={styles['nav-link']} to="cart">
+                                <span className={styles['nav-link']} to="cart">
                                     Cart
-                                </Link>
+                                </span>
                                 <span
                                     className={cart.length ? '' : styles.hidden}
                                 >
-                                    {cart.length || ''}
-                                    {cart.length || ''}
+                                    {cart.length}
                                 </span>
-                            </div>
+                            </button>
                         </li>
                     </ul>
                 </nav>

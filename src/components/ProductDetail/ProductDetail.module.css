@@ -116,7 +116,7 @@
   background-color: #4c6b22;
   color: #beee11;
   padding: 2rem;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -141,8 +141,14 @@
   color: #beee11;
   font-size: 2rem;
 }
+.product-detail-container .product-detail-end .price-container .price-container-right .hidden + .discounted-price {
+  color: #fff;
+  width: 15rem;
+  text-align: center;
+}
 .product-detail-container .product-detail-end .add-to-cart {
   cursor: pointer;
+  font-weight: 600;
   font-size: 2rem;
   padding: 2rem 4rem;
   margin-right: 5%;
@@ -151,8 +157,13 @@
   border: 1px solid #000;
   text-decoration: none;
   text-align: center;
+  width: 20rem;
 }
 .product-detail-container .product-detail-end .add-to-cart:hover {
   background-color: #beee11;
   color: #4e4e4e;
+}
+
+.hidden {
+  display: none;
 }

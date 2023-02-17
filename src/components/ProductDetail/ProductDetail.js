@@ -1,9 +1,11 @@
 import styles from './ProductDetail.module.css';
 
 import Recommender from '../Recommender/Recommender';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../store/cartSlice';
 
 const ProductDetail = ({ game }) => {
+    const dispatch = useDispatch();
     const games = useSelector(state => state.store.games);
     const relatedTag = game.tags[0];
     const relatedGames = [];
@@ -15,6 +17,18 @@ const ProductDetail = ({ game }) => {
         )
             relatedGames.push(currentGame);
     });
+
+    const clickHandler = e => {
+        const text = e.target.textContent;
+
+        if (text.includes('Add')) {
+            e.target.textContent = 'In Cart';
+            dispatch(cartActions.add(game));
+        } else {
+            e.target.textContent = 'Add to Cart';
+            dispatch(cartActions.remove(game));
+        }
+    };
 
     return (
         <div className={styles.content}>
@@ -41,12 +55,22 @@ const ProductDetail = ({ game }) => {
                     </div>
                     <div className={styles['product-detail-end']}>
                         <div className={styles['price-container']}>
-                            <div className={styles['price-container-left']}>
+                            <div
+                                className={
+                                    game.discount
+                                        ? styles['price-container-left']
+                                        : styles.hidden
+                                }
+                            >
                                 <span>{`-${game.discount}%`}</span>
                             </div>
                             <div className={styles['price-container-right']}>
                                 <span
-                                    className={styles.price}
+                                    className={
+                                        game.discount
+                                            ? styles.price
+                                            : styles.hidden
+                                    }
                                 >{`$${game.price.toFixed(2)}`}</span>
                                 <span
                                     className={styles['discounted-price']}
@@ -56,7 +80,10 @@ const ProductDetail = ({ game }) => {
                                 ).toFixed(2)}`}</span>
                             </div>
                         </div>
-                        <button className={styles['add-to-cart']}>
+                        <button
+                            onClick={clickHandler}
+                            className={styles['add-to-cart']}
+                        >
                             Add to Cart
                         </button>
                     </div>

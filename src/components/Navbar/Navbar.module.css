@@ -1,6 +1,7 @@
 .container {
   width: 100%;
   background-color: #171a21;
+  min-height: 14rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,10 +35,12 @@
   justify-content: center;
   gap: 3rem;
 }
-.Navbar ul .ul-link a {
+.Navbar ul .ul-link a,
+.Navbar ul .nav-link {
   position: relative;
 }
-.Navbar ul .ul-link a:after {
+.Navbar ul .ul-link a:after,
+.Navbar ul .nav-link:after {
   position: absolute;
   bottom: -50%;
   left: 0;
@@ -48,7 +51,8 @@
   background: #cbcaca;
   height: 1px;
 }
-.Navbar ul .ul-link a:hover:after {
+.Navbar ul .ul-link a:hover:after,
+.Navbar ul .nav-link:hover:after {
   width: 100%;
   background: #fff;
 }
@@ -58,9 +62,10 @@
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.5rem;
-  font-weight: 600;
   cursor: pointer;
   width: 6rem;
+  background-color: transparent;
+  border: none;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -73,35 +78,60 @@
   color: #fff;
 }
 
-.cart-container-visible {
-  padding: 1rem;
+.cart-container-visible,
+.cart-container {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 0;
 }
-.cart-container-visible .nav-link {
-  color: #fff;
-}
-.cart-container-visible .hidden {
-  display: none;
-}
-.cart-container-visible span {
-  padding: 1rem;
-  font-size: 2rem;
-  background-color: #4c6b22;
-  color: #fff;
+.cart-container-visible span,
+.cart-container span {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 2rem;
 }
+.cart-container-visible span:nth-child(2),
+.cart-container span:nth-child(2) {
+  padding: 1rem;
+  color: #fff;
+  width: 4rem;
+  font-size: 2rem;
+  background-color: #4c6b22;
+}
+
+.cart-container {
+  background-color: transparent;
+  border: none;
+}
 
 .cart-container-visible:hover {
-  background-color: rgb(113, 156, 49);
+  background-color: #beee11;
 }
+
 .cart-container-visible:hover span {
-  background-color: #1a2938;
+  color: #4e4e4e;
+  font-weight: bold;
+}
+
+.cart-container-visible:hover span:nth-child(2) {
+  background-color: #172431;
+  color: #fff;
+}
+
+.cart-container-visible:hover .nav-link:hover:after {
+  background-color: transparent;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 4rem;
 }

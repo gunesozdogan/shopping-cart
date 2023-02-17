@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
+import Cart from '../components/Cart/Cart';
 import ProductDetail from '../components/ProductDetail/ProductDetail';
 
 const ProductPage = () => {
@@ -15,6 +16,7 @@ const ProductPage = () => {
             <div className="outer-container">
                 <Navbar />
                 {games.length ? <ProductDetail game={currentProduct} /> : ''}
+                <Cart />
             </div>
         </>
     );
