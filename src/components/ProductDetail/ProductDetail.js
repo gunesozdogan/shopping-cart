@@ -7,8 +7,16 @@ import { cartActions } from '../../store/cartSlice';
 const ProductDetail = ({ game }) => {
     const dispatch = useDispatch();
     const games = useSelector(state => state.store.games);
+    const cartGames = useSelector(state => state.cart.games);
     const relatedTag = game.tags[0];
     const relatedGames = [];
+    let isInCart = false;
+
+    [...cartGames].forEach(curGame => {
+        if (game.name === curGame.name) {
+            isInCart = true;
+        }
+    });
 
     games.forEach(currentGame => {
         if (
@@ -84,7 +92,7 @@ const ProductDetail = ({ game }) => {
                             onClick={clickHandler}
                             className={styles['add-to-cart']}
                         >
-                            Add to Cart
+                            {isInCart ? 'In Cart' : 'Add to Cart'}
                         </button>
                     </div>
                 </div>

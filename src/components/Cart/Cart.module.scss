@@ -55,12 +55,46 @@
     }
 }
 
-.cart-game-container {
-    @include flexBox(row, center, center, 2rem);
+.container {
+    position: relative;
+
+    .remove-btn {
+        background-color: transparent;
+        border: none;
+        padding: 2rem;
+        cursor: pointer;
+        position: absolute;
+        transform: translateY(50%);
+        top: 0;
+        right: 0;
+        z-index: 1000;
+
+        svg {
+            width: 1.6rem;
+            height: 1.6rem;
+            fill: #73888e;
+            stroke: #73888e;
+            stroke-width: 0.7rem;
+        }
+    }
+
+    .remove-btn:hover {
+        svg {
+            fill: #fff;
+            stroke: #fff;
+        }
+    }
+}
+
+.cart-game-container:link,
+.cart-game-container:visited {
+    @include flexBox(row, center, flex-start, 2rem);
     padding: 0 2rem;
+    text-decoration: none;
 
     img {
         width: 30%;
+        align-self: flex-start;
     }
 
     .game-name {
@@ -70,9 +104,69 @@
     }
 
     .game-price {
+        @include flexBox(column, flex-start, flex-start, 0.5rem);
+        font-size: 2rem;
+        color: $secondary-green-color;
+        color: #fff;
+        width: 10rem;
+        text-align: left;
+
+        .default-price {
+            color: #73888e;
+            text-decoration: line-through;
+        }
+
+        .discounted-price {
+            color: $main-green-color;
+        }
+
+        .hidden + .discounted-price {
+            color: #73888e;
+        }
+    }
+}
+
+.cart-game-container:hover,
+.cart-game-container:active {
+    background-color: $primary-background-color;
+}
+
+.total {
+    border-top: 1px solid #fff;
+    padding: 2rem;
+    width: 100%;
+    @include flexBox(row, center, flex-start);
+
+    .total-text {
+        flex: 6;
+        text-align: right;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+
+    .total-price {
+        flex: 1;
+        text-align: left;
         font-size: 2.5rem;
         color: $main-green-color;
     }
+}
+
+.buy-btn {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 1.5rem 4rem;
+    margin-top: 2rem;
+    background-color: $attention-green-color;
+    color: #fff;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.buy-btn:hover {
+    background-color: $main-green-color;
+    color: #4e4e4e;
 }
 
 .hidden {

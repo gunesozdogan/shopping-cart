@@ -54,25 +54,123 @@
   stroke-width: 4px;
 }
 
-.cart-game-container {
+.container {
+  position: relative;
+}
+.container .remove-btn {
+  background-color: transparent;
+  border: none;
+  padding: 2rem;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(50%);
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+.container .remove-btn svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: #73888e;
+  stroke: #73888e;
+  stroke-width: 0.7rem;
+}
+.container .remove-btn:hover svg {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.cart-game-container:link,
+.cart-game-container:visited {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2rem;
   padding: 0 2rem;
+  text-decoration: none;
 }
-.cart-game-container img {
+.cart-game-container:link img,
+.cart-game-container:visited img {
   width: 30%;
+  align-self: flex-start;
 }
-.cart-game-container .game-name {
+.cart-game-container:link .game-name,
+.cart-game-container:visited .game-name {
   color: #fff;
   font-size: clamp(1.8rem, 1.2vw, 2.2rem);
   width: 50%;
 }
-.cart-game-container .game-price {
+.cart-game-container:link .game-price,
+.cart-game-container:visited .game-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  font-size: 2rem;
+  color: #4c6b22;
+  color: #fff;
+  width: 10rem;
+  text-align: left;
+}
+.cart-game-container:link .game-price .default-price,
+.cart-game-container:visited .game-price .default-price {
+  color: #73888e;
+  text-decoration: line-through;
+}
+.cart-game-container:link .game-price .discounted-price,
+.cart-game-container:visited .game-price .discounted-price {
+  color: #beee11;
+}
+.cart-game-container:link .game-price .hidden + .discounted-price,
+.cart-game-container:visited .game-price .hidden + .discounted-price {
+  color: #73888e;
+}
+
+.cart-game-container:hover,
+.cart-game-container:active {
+  background-color: #1a2938;
+}
+
+.total {
+  border-top: 1px solid #fff;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.total .total-text {
+  flex: 6;
+  text-align: right;
+  font-size: 2.5rem;
+  color: #fff;
+}
+.total .total-price {
+  flex: 1;
+  text-align: left;
   font-size: 2.5rem;
   color: #beee11;
+}
+
+.buy-btn {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 1.5rem 4rem;
+  margin-top: 2rem;
+  background-color: rgb(113, 156, 49);
+  color: #fff;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.buy-btn:hover {
+  background-color: #beee11;
+  color: #4e4e4e;
 }
 
 .hidden {
