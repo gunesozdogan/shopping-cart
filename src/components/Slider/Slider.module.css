@@ -115,3 +115,70 @@
   background-color: #beee11;
   color: #4e4e4e;
 }
+
+@media (max-width: 768px) {
+  .slider-container {
+    width: 90%;
+    min-width: auto;
+    height: 40%;
+  }
+  .slider-container .slider {
+    background-color: transparent;
+  }
+  .slider-container .slider-inner-container {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+  .slider-container .slider-inner-container img {
+    width: 100%;
+  }
+  .slider-container .slider-inner-container .game-information-container {
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+  }
+  .slider-container .slider-inner-container .price-outer-container {
+    height: 5rem;
+  }
+  .slider-container .slider-inner-container .discount-percentage {
+    font-size: 2.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex: 1;
+    height: 100%;
+  }
+  .slider-container .slider-inner-container .price-container {
+    font-size: 1.8rem;
+    padding: 1rem;
+    flex: 3;
+    height: 100%;
+  }
+  .slider-container .slider-inner-container .price-container .price-text {
+    font-size: 1.8rem;
+  }
+  .slider-container .slider-inner-container .buy-button {
+    width: 100%;
+    margin: 0 auto;
+    height: 3rem;
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+}

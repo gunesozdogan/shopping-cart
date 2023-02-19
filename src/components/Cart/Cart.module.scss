@@ -61,12 +61,11 @@
     .remove-btn {
         background-color: transparent;
         border: none;
-        padding: 2rem;
         cursor: pointer;
         position: absolute;
-        transform: translateY(50%);
-        top: 0;
-        right: 0;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 2%;
         z-index: 1000;
 
         svg {

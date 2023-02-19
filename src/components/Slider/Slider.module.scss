@@ -104,3 +104,63 @@
         color: #4e4e4e;
     }
 }
+
+@media (max-width: 768px) {
+    .slider-container {
+        width: 90%;
+        min-width: auto;
+        height: 40%;
+
+        .slider {
+            background-color: transparent;
+        }
+
+        .slider-inner-container {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            @include flexBox(column, center, center, 0);
+
+            img {
+                width: 100%;
+            }
+
+            .game-information-container {
+                height: 10rem;
+                @include flexBox(column, stretch, center, 0);
+            }
+
+            .price-outer-container {
+                height: 5rem;
+            }
+
+            .discount-percentage {
+                font-size: 2.5rem;
+                padding: 1rem;
+                @include flexBox();
+                flex: 1;
+                height: 100%;
+            }
+
+            .price-container {
+                font-size: 1.8rem;
+                padding: 1rem;
+                flex: 3;
+                height: 100%;
+
+                .price-text {
+                    font-size: 1.8rem;
+                }
+            }
+
+            .buy-button {
+                width: 100%;
+                margin: 0 auto;
+                height: 3rem;
+                flex: 1;
+                padding: 1rem;
+                @include flexBox();
+            }
+        }
+    }
+}

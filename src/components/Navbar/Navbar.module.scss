@@ -53,6 +53,9 @@ $main-font-color: #cbcaca;
     }
 }
 
+.nav-mobile {
+    display: none;
+}
 .nav-link {
     color: $main-font-color;
     text-transform: uppercase;
@@ -118,4 +121,68 @@ $main-font-color: #cbcaca;
 .hidden {
     visibility: hidden;
     width: 4rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        min-height: 7rem;
+    }
+
+    .Navbar {
+        min-width: 100%;
+        height: 10rem;
+
+        .header {
+            font-size: 3rem;
+        }
+
+        nav {
+            display: none;
+        }
+
+        .nav-mobile {
+            display: block;
+            fill: $main-font-color;
+            stroke: $main-font-color;
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            position: relative;
+            z-index: 1000;
+
+            .ul-mobile {
+                background-color: $nav-background-color;
+                padding: 2rem 3rem 2rem 4rem;
+                position: absolute;
+                margin-top: 3rem;
+                top: 0;
+                right: -100%;
+                @include flexBox(column, flex-start, center, 0);
+
+                .ul-link-mobile {
+                    height: 4rem;
+                    @include flexBox();
+                }
+
+                .nav-link-mobile {
+                    font-size: 1.8rem;
+                    color: $main-font-color;
+                    text-decoration: none;
+                }
+
+                .cart-container-mobile {
+                    background-color: transparent;
+                    border: none;
+                    @include flexBox(row, center, center, 0.5rem);
+
+                    span:nth-child(2) {
+                        padding: 0.5rem 1rem;
+                        font-size: 2rem;
+                        background-color: $secondary-green-color;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
