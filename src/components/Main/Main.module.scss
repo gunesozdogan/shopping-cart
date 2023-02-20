@@ -2,6 +2,7 @@
 
 .main-container {
     width: 100%;
+    padding: 2rem;
     @include flexBox(row, flex-start, flex-start, 2rem);
 }
 
@@ -14,4 +15,16 @@
     gap: 2rem;
     justify-items: center;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        @include flexBox(column, flex-start, flex-start, 0rem);
+    }
+
+    .main {
+        @include flexBox(column);
+        min-width: auto;
+        width: 100%;
+    }
 }

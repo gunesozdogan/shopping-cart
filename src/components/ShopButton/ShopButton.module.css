@@ -19,3 +19,9 @@
   background-color: #beee11;
   color: #4e4e4e;
 }
+
+@media (max-width: 768px) {
+  .shop-button {
+    padding: 1.5rem;
+  }
+}

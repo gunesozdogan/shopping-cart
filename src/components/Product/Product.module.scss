@@ -37,7 +37,7 @@ $product-container-background-color: #2a475e;
 .price-container {
     width: 100%;
     flex: 1;
-    padding: 2rem;
+    margin-top: 2rem;
     @include flexBox(row, stretch, flex-start, 0);
 
     span {
@@ -50,6 +50,7 @@ $product-container-background-color: #2a475e;
         font-size: 2rem;
         color: $main-green-color;
         background-color: $secondary-green-color;
+        flex: 1;
     }
 
     .price,
@@ -58,6 +59,7 @@ $product-container-background-color: #2a475e;
         font-size: 2rem;
         color: #738895;
         text-decoration: line-through;
+        flex: 1;
     }
 
     .discount-price {

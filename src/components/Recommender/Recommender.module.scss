@@ -85,3 +85,9 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .recommender-outer-container {
+        min-width: auto;
+    }
+}

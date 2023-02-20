@@ -34,3 +34,34 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+        padding: 0;
+        margin: 2rem auto 4rem;
+        width: 100%;
+
+        span {
+            font-size: 1.5rem;
+            text-align: center;
+            width: 100%;
+            border-top: none;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #66c0f4;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-self: start;
+
+            li {
+                justify-self: center;
+            }
+
+            button {
+                text-align: center;
+            }
+        }
+    }
+}

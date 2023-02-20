@@ -33,7 +33,7 @@
 .price-container {
   width: 100%;
   flex: 1;
-  padding: 2rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -53,6 +53,7 @@
   font-size: 2rem;
   color: #beee11;
   background-color: #4c6b22;
+  flex: 1;
 }
 .price-container .price,
 .price-container .discount-price {
@@ -60,6 +61,7 @@
   font-size: 2rem;
   color: #738895;
   text-decoration: line-through;
+  flex: 1;
 }
 .price-container .discount-price {
   color: #beee11;
