@@ -196,6 +196,7 @@
                 width: 100%;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
         }
 
@@ -204,11 +205,20 @@
             @include flexBox(column, stretch, center, 3rem);
 
             .price-container {
+                height: 5rem;
+
                 .price-container-left,
                 .price-container-right {
                     padding: 0.5rem;
                     flex: 1;
-                    font-size: 2rem;
+                    font-size: 2.5rem;
+                }
+
+                .price-container-right {
+                    .price,
+                    .discounted-price {
+                        font-size: 1.8rem;
+                    }
                 }
             }
             .add-to-cart {

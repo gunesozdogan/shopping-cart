@@ -89,5 +89,24 @@
 @media (max-width: 768px) {
     .recommender-outer-container {
         min-width: auto;
+        margin: 5rem auto;
+        width: 100%;
+
+        h2 {
+            width: 100%;
+        }
+
+        .recommender {
+            width: auto;
+
+            .recommender-product-container:link,
+            .recommender-product-container:visited {
+                width: 35rem;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

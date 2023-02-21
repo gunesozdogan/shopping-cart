@@ -99,5 +99,21 @@
 @media (max-width: 768px) {
   .recommender-outer-container {
     min-width: auto;
+    margin: 5rem auto;
+    width: 100%;
+  }
+  .recommender-outer-container h2 {
+    width: 100%;
+  }
+  .recommender-outer-container .recommender {
+    width: auto;
+  }
+  .recommender-outer-container .recommender .recommender-product-container:link,
+  .recommender-outer-container .recommender .recommender-product-container:visited {
+    width: 35rem;
+  }
+  .recommender-outer-container .recommender .recommender-product-container:link img,
+  .recommender-outer-container .recommender .recommender-product-container:visited img {
+    width: 100%;
   }
 }

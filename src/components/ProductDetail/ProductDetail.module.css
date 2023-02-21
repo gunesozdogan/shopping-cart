@@ -217,6 +217,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   .product-detail-container .product-detail-end {
     height: auto;
@@ -226,11 +227,18 @@
     justify-content: center;
     gap: 3rem;
   }
+  .product-detail-container .product-detail-end .price-container {
+    height: 5rem;
+  }
   .product-detail-container .product-detail-end .price-container .price-container-left,
   .product-detail-container .product-detail-end .price-container .price-container-right {
     padding: 0.5rem;
     flex: 1;
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+  .product-detail-container .product-detail-end .price-container .price-container-right .price,
+  .product-detail-container .product-detail-end .price-container .price-container-right .discounted-price {
+    font-size: 1.8rem;
   }
   .product-detail-container .product-detail-end .add-to-cart {
     width: 100%;

@@ -175,3 +175,34 @@
 .hidden {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .cart-overlay {
+    z-index: 1001;
+  }
+  .cart-container {
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    z-index: 1001;
+  }
+  .cart-container .header {
+    padding: 6rem 2rem 2rem;
+  }
+  .cart-container h2 {
+    width: 100%;
+  }
+  .total {
+    width: 95%;
+  }
+  .total .total-text {
+    font-size: 2rem;
+  }
+  .total .total-price {
+    font-size: 2.2rem;
+  }
+  .buy-btn {
+    font-size: 1.8rem;
+    padding: 1.5rem 3rem;
+  }
+}
