@@ -48,6 +48,8 @@
         "arrowParens": "avoid"
     },
     "devDependencies": {
-        "gh-pages": "^5.0.0"
+        "gh-pages": "^5.0.0",
+        "install": "^0.13.0",
+        "npm": "^9.5.0"
     }
 }

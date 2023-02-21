@@ -1,4 +1,4 @@
-# GAME FIELD (FAKE GAME STORE)
+# GAME FIELD
 
 A fake game store called "GAME FIELD".
 
@@ -6,4 +6,10 @@ A fake game store called "GAME FIELD".
 
 <img src="./public/ss.png">
 
-# How To Play
+# Tools
+
+React
+Redux
+Redux toolkit
+React-router
+Sass
