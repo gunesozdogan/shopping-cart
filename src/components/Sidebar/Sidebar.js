@@ -27,9 +27,7 @@ const Sidebar = () => {
     ];
 
     const displayCategory = e => {
-        let category;
-        if (e) category = e.target.textContent;
-        else category = 'All';
+        let category = e ? e.target.textContent : 'All';
 
         navigate(`/store?category=${category}`);
         dispatch(storeActions.changeDisplayedGames(category));
