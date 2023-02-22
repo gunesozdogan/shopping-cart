@@ -10,8 +10,8 @@ A fake steam like game store called "GAME FIELD".
 
 # Tools
 
-React
-Redux
-Redux toolkit
-React-router
+React  
+Redux  
+Redux toolkit  
+React-router  
 Sass
