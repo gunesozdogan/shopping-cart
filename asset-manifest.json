@@ -1,14 +1,26 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.82189fef.css",
-    "main.js": "/shopping-cart/static/js/main.91cbcd4a.js",
+    "main.css": "/shopping-cart/static/css/main.8ec1c5f9.css",
+    "main.js": "/shopping-cart/static/js/main.300a5205.js",
+    "static/media/pubg.jpg": "/shopping-cart/static/media/pubg.c21818fac3f11caaf789.jpg",
+    "static/media/lost-ark.jpg": "/shopping-cart/static/media/lost-ark.f56a717890a337fa2329.jpg",
+    "static/media/dying-light-2.jpg": "/shopping-cart/static/media/dying-light-2.bece680708d1091aad3f.jpg",
+    "static/media/skyrim.jpg": "/shopping-cart/static/media/skyrim.fb3557878dba43bed019.jpg",
+    "static/media/fifa-2023.jpg": "/shopping-cart/static/media/fifa-2023.99b9d2b4ad4e1c7987d2.jpg",
+    "static/media/the-last-of-us-part-1.jpg": "/shopping-cart/static/media/the-last-of-us-part-1.a2a723a38e3fac9cfe74.jpg",
+    "static/media/call-of-duty-modern-warfare-2.jpg": "/shopping-cart/static/media/call-of-duty-modern-warfare-2.43f342b9f6a20ad36f37.jpg",
+    "static/media/elden-ring.jpg": "/shopping-cart/static/media/elden-ring.158636429563140a0930.jpg",
+    "static/media/spiderman-remastered.jpg": "/shopping-cart/static/media/spiderman-remastered.1a288a42fb7a5475d891.jpg",
+    "static/media/destiny-2.jpg": "/shopping-cart/static/media/destiny-2.1258ebba2af6299c0993.jpg",
+    "static/media/spiderman-miles-morales.jpg": "/shopping-cart/static/media/spiderman-miles-morales.cafbc44a97aff289e315.jpg",
     "static/media/product-background.jpg": "/shopping-cart/static/media/product-background.1f89465bdbecbec94d57.jpg",
+    "static/media/rust.jpg": "/shopping-cart/static/media/rust.196450e3e3df748966f8.jpg",
     "index.html": "/shopping-cart/index.html",
-    "main.82189fef.css.map": "/shopping-cart/static/css/main.82189fef.css.map",
-    "main.91cbcd4a.js.map": "/shopping-cart/static/js/main.91cbcd4a.js.map"
+    "main.8ec1c5f9.css.map": "/shopping-cart/static/css/main.8ec1c5f9.css.map",
+    "main.300a5205.js.map": "/shopping-cart/static/js/main.300a5205.js.map"
   },
   "entrypoints": [
-    "static/css/main.82189fef.css",
-    "static/js/main.91cbcd4a.js"
+    "static/css/main.8ec1c5f9.css",
+    "static/js/main.300a5205.js"
   ]
 }
