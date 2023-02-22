@@ -45,7 +45,8 @@
     "prettier": {
         "singleQuote": true,
         "tabWidth": 4,
-        "arrowParens": "avoid"
+        "arrowParens": "avoid",
+        "quoteProps": "preserve"
     },
     "devDependencies": {
         "gh-pages": "^5.0.0",

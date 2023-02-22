@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { storeActions } from '../../store/storeSlice';
 
+import { images } from '../../App';
+
 const Slider = () => {
     const sliderGames = useSelector(state => state.store.sliderGames);
     const dispatch = useDispatch();
@@ -30,10 +32,7 @@ const Slider = () => {
                                     : styles['slider-inner-container']
                             }
                         >
-                            <img
-                                src={'../assets/games/' + game.urlName + '.jpg'}
-                                alt="game"
-                            />
+                            <img src={images[game.urlName]} alt="game" />
                             <div
                                 className={styles['game-information-container']}
                             >

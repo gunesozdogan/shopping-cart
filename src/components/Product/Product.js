@@ -1,12 +1,13 @@
 import styles from './Product.module.css';
 import { Link } from 'react-router-dom';
+import { images } from '../../App';
 
 const Product = props => {
     const { name, id, urlName, price, discount } = props.game;
 
     return (
         <Link to={`/${id}/${urlName}`} className={styles.container}>
-            <img src={'../assets/games/' + urlName + '.jpg'} alt={name} />
+            <img src={images[urlName]} alt={name} />
             <h2 className={styles['product-name']}>{name}</h2>
             <div className={styles['price-container']}>
                 <span className={discount ? styles.discount : styles.hidden}>

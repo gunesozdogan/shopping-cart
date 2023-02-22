@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import { images } from '../../App';
 import styles from './Recommender.module.css';
 
 const Recommender = ({ relatedGames }) => {
@@ -14,10 +15,7 @@ const Recommender = ({ relatedGames }) => {
                             key={game.id}
                             className={styles['recommender-product-container']}
                         >
-                            <img
-                                src={`../assets/games/${game.urlName}.jpg`}
-                                alt=""
-                            />
+                            <img src={images[game.urlName]} alt="" />
                             <div className={styles['price-container']}>
                                 <div
                                     className={
