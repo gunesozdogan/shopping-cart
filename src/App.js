@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -61,6 +61,7 @@ function App() {
 
     return (
         <Routes>
+            <Route path="/shopping-cart" element={<Navigate to="/" />}></Route>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/store" element={<ShopPage />}></Route>
             <Route
