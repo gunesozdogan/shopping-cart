@@ -1,6 +1,6 @@
 # GAME FIELD
 
-Steam-inspired e-commerce app called "GAME FIELD", built with React, Redux, and Firebase. Features category filtering, cart management, and discount pricing.
+Steam-inspired e-commerce app called "GAME FIELD", built with React and Redux. Features category filtering, cart management, and discount pricing. Game data is fetched FROM RAWG API
 
 <a href="https://gunesozdogan.github.io/shopping-cart" name="demo">Live Demo</a>
 

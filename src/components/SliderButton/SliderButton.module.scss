@@ -1,15 +1,18 @@
-@import '../../index.scss';
+@use '../../index.scss' as *;
 
-.slider-button-next {
-    background: transparent;
+.slider-button-next,
+.slider-button-prev {
     position: absolute;
-    border: none;
     top: 50%;
-    right: 0%;
-    transform: translateY(-50%);
-    background-color: #344454;
-    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(20, 31, 44, 0.55);
+    backdrop-filter: blur(6px);
     cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.2s ease, transform 0.2s ease;
     @include flexBox(row);
 
     svg {
@@ -19,21 +22,32 @@
     }
 }
 
+.slider-button-next {
+    right: 2rem;
+    transform: translateY(-50%);
+}
+
 .slider-button-prev {
-    background: transparent;
-    position: absolute;
-    border: none;
-    top: 50%;
-    left: 0%;
+    left: 2rem;
     transform: translateY(-50%) rotate(180deg);
-    background-color: #344454;
-    padding: 1rem;
-    cursor: pointer;
-    @include flexBox(row);
+}
+
+.slider-button-next:hover {
+    background-color: $main-green-color;
+    transform: translateY(-50%) scale(1.1);
 
     svg {
-        fill: #fff;
-        stroke: #fff;
-        stroke-width: 50;
+        fill: #16202b;
+        stroke: #16202b;
+    }
+}
+
+.slider-button-prev:hover {
+    background-color: $main-green-color;
+    transform: translateY(-50%) rotate(180deg) scale(1.1);
+
+    svg {
+        fill: #16202b;
+        stroke: #16202b;
     }
 }

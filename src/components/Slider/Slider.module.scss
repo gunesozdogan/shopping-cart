@@ -1,171 +1,191 @@
-@import '../../index.scss';
+@use '../../index.scss' as *;
 
 .slider-container {
     width: 70%;
     max-width: 125rem;
     min-width: 70rem;
-    height: 50rem;
-    background-color: $secondary-background-color;
+    height: 48rem;
     margin: 2rem auto;
     position: relative;
-    border-radius: 3rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    @include flexBox(row, center, center);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.45);
 }
 
 .slider {
-    margin-top: 12rem;
-    width: 61rem;
-    overflow: hidden;
-    border-radius: 0rem;
-    margin-bottom: 10rem;
-    background-color: #4e4e4e;
-    @include flexBox(row, center, center, 0);
-
-    img {
-        height: 100%;
-    }
-
-    .hidden {
-        display: none;
-    }
-}
-
-.slider-inner-container {
-    @include flexBox(column, center, center, 0);
-}
-
-.game-information-container {
-    color: #fff;
-    align-self: flex-start;
     width: 100%;
-    @include flexBox(row, center, space-between, 0);
+    height: 100%;
+    position: relative;
+}
 
-    .price-outer-container {
-        @include flexBox(row, center, center, 0);
+.hidden {
+    display: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
     }
-
-    .discount-percentage {
-        font-size: 3rem;
-        color: $main-green-color;
-        background-color: #4c6b22;
-        padding: 3rem;
-        width: 12rem;
-        height: 8rem;
-        text-align: center;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
+}
 
-    .price-container {
-        font-size: 2rem;
-        background-color: #344454;
-        @include flexBox(column, center, center, 0.5rem);
-        width: 12rem;
-        height: 8rem;
-        padding: 3rem;
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
-        .price-text {
-            color: #73888e;
-            text-decoration: line-through;
-        }
+.overlay {
+    position: absolute;
+    inset: 0;
+    padding: 4rem;
+    @include flexBox(column, flex-start, flex-end, 2.5rem);
+    background: linear-gradient(
+        to top,
+        rgba(10, 18, 28, 0.96) 0%,
+        rgba(10, 18, 28, 0.6) 38%,
+        rgba(10, 18, 28, 0) 72%
+    );
+}
 
-        .discount-text {
-            color: $main-green-color;
-        }
-    }
+.info {
+    width: 100%;
+    @include flexBox(column, flex-start, flex-end, 1.4rem);
+}
 
-    .hidden + .price-container {
-        width: 25rem;
-    }
+.game-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.6);
+    max-width: 70%;
+}
 
-    .hidden + .price-container .price-text {
-        color: #fff;
-        text-decoration: none;
-        font-size: 2.5rem;
-    }
+.tag-row {
+    flex-wrap: wrap;
+    @include flexBox(row, center, flex-start, 1rem);
+}
 
-    .buy-button:link,
-    .buy-button:visited {
-        cursor: pointer;
-        background-color: $attention-green-color;
-        padding: 2rem;
-        border: none;
-        width: 16rem;
-        color: #fff;
-        font-size: 2rem;
-        border: 1px solid #000;
-        margin-right: 5rem;
-        text-decoration: none;
-        text-align: center;
-    }
+.tag {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #cfe0ee;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
-    .buy-button:hover,
-    .buy-button:active {
-        background-color: $main-green-color;
-        color: #4e4e4e;
-    }
+.purchase-row {
+    width: 100%;
+    @include flexBox(row, center, space-between, 2rem);
+}
+
+.price-block {
+    @include flexBox(row, center, flex-start, 1.5rem);
+}
+
+.discount-badge {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $main-green-color;
+    background-color: rgba(190, 238, 17, 0.15);
+    border: 1px solid rgba(190, 238, 17, 0.4);
+    padding: 1rem 1.6rem;
+    border-radius: 1rem;
+}
+
+.prices {
+    @include flexBox(column, flex-start, center, 0.2rem);
+}
+
+.old-price {
+    font-size: 1.6rem;
+    color: #7c93a5;
+    text-decoration: line-through;
+}
+
+.final-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.buy-button:link,
+.buy-button:visited {
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #16202b;
+    background: linear-gradient(
+        135deg,
+        $main-green-color,
+        $attention-green-color
+    );
+    padding: 1.6rem 3.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 2rem rgba(190, 238, 17, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buy-button:hover,
+.buy-button:active {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1.2rem 2.8rem rgba(190, 238, 17, 0.45);
 }
 
 @media (max-width: 768px) {
     .slider-container {
-        width: 90%;
+        width: 92%;
         min-width: auto;
-        height: 40%;
+        height: 34rem;
+        border-radius: 1.2rem;
+    }
 
-        .slider {
-            background-color: transparent;
-            height: 100%;
-        }
+    .overlay {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
 
-        .slider-inner-container {
-            width: 100%;
-            height: 100%;
-            border-radius: 1rem;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            overflow: hidden;
-            @include flexBox(column, center, center, 0);
+    .game-title {
+        font-size: 2.6rem;
+        max-width: 100%;
+    }
 
-            img {
-                width: 100%;
-                flex: 0;
-            }
+    .purchase-row {
+        @include flexBox(column, stretch, center, 1.2rem);
+    }
 
-            .game-information-container {
-                height: 10rem;
-                @include flexBox(column, stretch, center, 0);
-            }
+    .buy-button:link,
+    .buy-button:visited {
+        text-align: center;
+        padding: 1.2rem;
+    }
 
-            .price-outer-container {
-                height: 6rem;
-            }
-
-            .discount-percentage {
-                font-size: 2.5rem;
-                padding: 1rem;
-                @include flexBox();
-                height: 100%;
-            }
-
-            .price-container {
-                font-size: 1.8rem;
-                padding: 1rem;
-
-                flex: 3;
-                height: 100%;
-
-                .price-text {
-                    font-size: 1.8rem;
-                }
-            }
-
-            .buy-button {
-                width: 100%;
-                margin: 0 auto;
-                padding: 1rem;
-                height: 4rem;
-                border: none;
-                @include flexBox();
-            }
-        }
+    .final-price {
+        font-size: 2.4rem;
     }
 }

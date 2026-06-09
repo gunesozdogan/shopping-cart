@@ -21,64 +21,90 @@ const Slider = () => {
         <div className={styles['slider-container']}>
             <div className={styles.slider}>
                 {sliderGames.map((game, index) => {
-                    return (game ?
+                    if (!game) return null;
+
+                    const discountedPrice = (
+                        (game.price * (100 - game.discount)) /
+                        100
+                    ).toFixed(2);
+
+                    return (
                         <div
                             key={game.id}
                             className={
-                                index !== 0
-                                    ? styles.hidden
-                                    : styles['slider-inner-container']
+                                index !== 0 ? styles.hidden : styles.slide
                             }
                         >
-                            <img src={game?.image} alt="game" />
-                            <div
-                                className={styles['game-information-container']}
-                            >
-                                <div
-                                    className={styles['price-outer-container']}
-                                >
-                                    <div
-                                        className={
-                                            game.discount
-                                                ? styles['discount-percentage']
-                                                : styles.hidden
-                                        }
-                                    >
-                                        {`${-game.discount}%`}
-                                    </div>
-                                    <div className={styles['price-container']}>
-                                        <p className={styles['price-text']}>
-                                            {'$' + game.price.toFixed(2)}
-                                        </p>
-                                        <p
-                                            className={
-                                                game.discount
-                                                    ? styles['discount-text']
-                                                    : styles.hidden
-                                            }
-                                        >
-                                            {'$' +
-                                                (
-                                                    (game.price *
-                                                        (100 - game.discount)) /
-                                                    100
-                                                ).toFixed(2)}
-                                        </p>
+                            <img
+                                src={game.image}
+                                alt={game.name}
+                                className={styles['slide-image']}
+                            />
+                            <div className={styles.overlay}>
+                                <div className={styles.info}>
+                                    <h2 className={styles['game-title']}>
+                                        {game.name}
+                                    </h2>
+                                    <div className={styles['tag-row']}>
+                                        {game.tags.slice(0, 3).map(tag => (
+                                            <span
+                                                key={tag}
+                                                className={styles.tag}
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
-                                <Link
-                                    to={`/${game.id}/${game.urlName}`}
-                                    className={styles['buy-button']}
-                                >
-                                    Buy Now
-                                </Link>
+
+                                <div className={styles['purchase-row']}>
+                                    <div className={styles['price-block']}>
+                                        {game.discount ? (
+                                            <span
+                                                className={
+                                                    styles['discount-badge']
+                                                }
+                                            >
+                                                {`-${game.discount}%`}
+                                            </span>
+                                        ) : null}
+                                        <div className={styles.prices}>
+                                            {game.discount ? (
+                                                <span
+                                                    className={
+                                                        styles['old-price']
+                                                    }
+                                                >
+                                                    {`$${game.price.toFixed(
+                                                        2
+                                                    )}`}
+                                                </span>
+                                            ) : null}
+                                            <span
+                                                className={styles['final-price']}
+                                            >
+                                                {`$${
+                                                    game.discount
+                                                        ? discountedPrice
+                                                        : game.price.toFixed(2)
+                                                }`}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <Link
+                                        to={`/${game.id}/${game.urlName}`}
+                                        className={styles['buy-button']}
+                                    >
+                                        Buy Now
+                                    </Link>
+                                </div>
                             </div>
-                        </div> : ''
+                        </div>
                     );
                 })}
             </div>
-            <SliderButton direction="next" moveSlide={nextSlide} />
             <SliderButton direction="prev" moveSlide={prevSlide} />
+            <SliderButton direction="next" moveSlide={nextSlide} />
         </div>
     );
 };

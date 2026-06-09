@@ -1,10 +1,12 @@
-@import '../../index.scss';
+@use '../../index.scss' as *;
 $main-font-color: #cbcaca;
 
 .container {
     width: 100%;
     background-color: $nav-background-color;
-    min-height: 14rem;
+    min-height: 9rem;
+    border-bottom: 1px solid rgba(102, 192, 244, 0.15);
+    box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.35);
     @include flexBox();
 }
 
@@ -12,115 +14,112 @@ $main-font-color: #cbcaca;
     min-width: 75rem;
     width: 65%;
     color: $main-font-color;
-    padding: 4rem 2rem;
+    padding: 2rem;
     @include flexBox(row, center, space-between);
 
     .header {
-        font-size: 4rem;
-        color: $main-font-color;
+        font-family: 'Oswald', sans-serif;
+        font-size: 3.4rem;
+        color: #fff;
         text-decoration: none;
         font-weight: 700;
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
+    }
+
+    .header:hover {
+        color: $main-green-color;
     }
 
     ul {
         list-style: none;
         @include flexBox(row, center, center, 3rem);
-
-        .ul-link a,
-        .nav-link {
-            position: relative;
-        }
-
-        .ul-link a:after,
-        .nav-link:after {
-            position: absolute;
-            bottom: -50%;
-            left: 0;
-            right: 0;
-            margin-top: -1rem;
-            width: 0%;
-            content: '';
-            background: $main-font-color;
-            height: 1px;
-        }
-
-        .ul-link a:hover:after,
-        .nav-link:hover:after {
-            width: 100%;
-            background: #fff;
-        }
     }
 }
 
 .nav-mobile {
     display: none;
 }
+
 .nav-link {
+    position: relative;
     color: $main-font-color;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    width: 6rem;
     background-color: transparent;
     border: none;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
     @include flexBox(row, center, center, 0.5rem);
 }
 
+.nav-link::after {
+    position: absolute;
+    bottom: -0.4rem;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: $main-green-color;
+    transition: width 0.25s ease;
+}
+
 .nav-link:hover {
-    font-weight: bold;
     color: #fff;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .cart-container-visible,
 .cart-container {
-    padding: 0.5rem;
-    background-color: transparent;
-    border: none;
     cursor: pointer;
-    @include flexBox(row, center, center, 0);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    padding: 0.6rem 0.6rem 0.6rem 1.6rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    @include flexBox(row, center, center, 1rem);
 
-    span {
-        font-size: 1.5rem;
-        @include flexBox();
+    .nav-link {
+        padding: 0;
+    }
+
+    .nav-link::after {
+        display: none;
     }
 
     span:nth-child(2) {
-        padding: 1rem;
-        color: #fff;
-        width: 4rem;
-        font-size: 2rem;
-        background-color: $secondary-green-color;
+        @include flexBox();
+        min-width: 2.6rem;
+        height: 2.6rem;
+        padding: 0 0.6rem;
+        border-radius: 100px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #16202b;
+        background-color: $main-green-color;
     }
 }
 
-.cart-container {
-    background-color: transparent;
-    border: none;
-}
+.cart-container-visible:hover,
+.cart-container:hover {
+    background-color: rgba(190, 238, 17, 0.12);
+    border-color: rgba(190, 238, 17, 0.5);
 
-.cart-container-visible:hover {
-    background-color: $main-green-color;
-}
-
-.cart-container-visible:hover span {
-    color: #4e4e4e;
-    font-weight: bold;
-}
-
-.cart-container-visible:hover span:nth-child(2) {
-    background-color: $secondary-background-color;
-    color: #fff;
-}
-
-.cart-container-visible:hover .nav-link:hover:after {
-    background-color: transparent;
+    .nav-link {
+        color: #fff;
+    }
 }
 
 .hidden {
-    visibility: hidden;
-    width: 4rem;
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -134,7 +133,7 @@ $main-font-color: #cbcaca;
         padding: 2rem;
 
         .header {
-            font-size: 3rem;
+            font-size: 2.8rem;
         }
 
         nav {
@@ -153,12 +152,14 @@ $main-font-color: #cbcaca;
 
             .ul-mobile {
                 background-color: $nav-background-color;
-                padding: 2rem 3rem 2rem 4rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 1rem;
+                padding: 1.5rem 2rem;
                 position: absolute;
                 margin-top: 3rem;
                 top: 0;
-                right: -100%;
-                @include flexBox(column, flex-start, center, 0);
+                right: 0;
+                @include flexBox(column, flex-start, center, 1rem);
 
                 .ul-link-mobile {
                     height: 4rem;
@@ -174,13 +175,24 @@ $main-font-color: #cbcaca;
                 .cart-container-mobile {
                     background-color: transparent;
                     border: none;
-                    @include flexBox(row, center, center, 0.5rem);
+                    cursor: pointer;
+                    @include flexBox(row, center, center, 0.8rem);
+
+                    span {
+                        font-size: 1.8rem;
+                        color: $main-font-color;
+                    }
 
                     span:nth-child(2) {
-                        padding: 0.5rem 1rem;
-                        font-size: 2rem;
-                        background-color: $secondary-green-color;
-                        color: #fff;
+                        @include flexBox();
+                        min-width: 2.6rem;
+                        height: 2.6rem;
+                        padding: 0 0.6rem;
+                        border-radius: 100px;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: #16202b;
+                        background-color: $main-green-color;
                     }
                 }
             }

@@ -1,4 +1,5 @@
 import styles from './ProductDetail.module.scss';
+import { useEffect, useState } from 'react';
 
 import Recommender from '../Recommender/Recommender';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +9,7 @@ const ProductDetail = ({ game }) => {
     const dispatch = useDispatch();
     const games = useSelector(state => state.store.games);
     const cartGames = useSelector(state => state.cart.games);
+    const [description, setDescription] = useState('');
     const relatedTag = game.tags[0];
     const relatedGames = [];
     let isInCart = false;
@@ -26,6 +28,27 @@ const ProductDetail = ({ game }) => {
             relatedGames.push(currentGame);
     });
 
+    useEffect(() => {
+        document.querySelector('.outer-container')?.scrollTo({ top: 0 });
+        window.scrollTo({ top: 0 });
+
+        const getDescription = async () => {
+            try {
+                const response = await fetch(
+                    `https://api.rawg.io/api/games/${game.id}?key=${
+                        import.meta.env.VITE_RAWG_KEY
+                    }`
+                );
+                const data = await response.json();
+                setDescription(data.description_raw || '');
+            } catch {
+                setDescription('');
+            }
+        };
+
+        getDescription();
+    }, [game.id]);
+
     const clickHandler = e => {
         const text = e.target.textContent;
 
@@ -42,10 +65,13 @@ const ProductDetail = ({ game }) => {
         <div className={styles.content}>
             <div className={styles['product-detail-container']}>
                 <div className={styles['product-detail-upper']}>
-                    <img src={game.image} alt="game"></img>
+                    <img src={game.image} alt={game.name}></img>
                     <div className={styles['product-detail']}>
                         <h2>{game.name}</h2>
-                        <p>{game.description}</p>
+                        <p>
+                            {description ||
+                                'No description available for this game.'}
+                        </p>
                     </div>
                 </div>
 

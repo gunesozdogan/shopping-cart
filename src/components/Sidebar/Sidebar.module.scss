@@ -1,67 +1,93 @@
-@import '../../index.scss';
+@use '../../index.scss' as *;
 
 .sidebar {
-    width: 16.5%;
-    padding: 10rem 0 0 4rem;
-    padding-top: 10rem;
+    width: 18%;
+    min-width: 22rem;
+    margin: 2rem 0 0 2rem;
+    padding: 2.5rem 2rem;
+    background-color: $secondary-background-color;
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+    align-self: flex-start;
     @include flexBox(column, flex-start, flex-start, 2rem);
-    align-self: stretch;
 
-    span {
-        width: 90%;
-        border-top: 1px solid #66c0f4;
-        padding-top: 2rem;
+    > span {
+        width: 100%;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
         font-size: 1.8rem;
-        color: #c6d4df;
+        font-weight: 600;
+        color: #fff;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid rgba(102, 192, 244, 0.4);
     }
 
     ul {
         list-style: none;
         width: 100%;
-        @include flexBox(column, flex-start, flex-start, 1.5rem);
+        @include flexBox(column, flex-start, flex-start, 0.5rem);
+    }
 
-        button {
-            color: #66c0f4;
-            font-size: 1.5rem;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
+    li {
+        width: 100%;
+    }
 
-        button:hover,
-        .active {
-            color: #c6d4df;
-        }
+    button {
+        width: 100%;
+        text-align: left;
+        color: #9fb4c4;
+        font-size: 1.5rem;
+        font-weight: 500;
+        background-color: transparent;
+        border: none;
+        border-left: 3px solid transparent;
+        border-radius: 0.6rem;
+        padding: 1rem 1.4rem;
+        cursor: pointer;
+        transition: color 0.18s ease, background-color 0.18s ease,
+            border-color 0.18s ease;
+    }
+
+    button:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .active {
+        color: $main-green-color;
+        background-color: rgba(190, 238, 17, 0.1);
+        border-left: 3px solid $main-green-color;
+        font-weight: 600;
     }
 }
 
 @media (max-width: 768px) {
     .sidebar {
-        padding: 0;
-        margin: 2rem auto 4rem;
-        width: 100%;
+        width: 92%;
+        min-width: auto;
+        margin: 2rem auto 3rem;
+        padding: 2rem;
 
-        span {
-            font-size: 1.5rem;
+        > span {
             text-align: center;
-            width: 100%;
-            border-top: none;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #66c0f4;
         }
 
         ul {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            align-self: start;
+            gap: 0.6rem;
+        }
 
-            li {
-                justify-self: center;
-            }
+        button {
+            text-align: center;
+            border-left: none;
+            border-bottom: 3px solid transparent;
+        }
 
-            button {
-                text-align: center;
-            }
+        .active {
+            border-left: none;
+            border-bottom: 3px solid $main-green-color;
         }
     }
 }
