@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './ShopButton.module.css';
+import styles from './ShopButton.module.scss';
 
 const ShopButton = () => {
     return (

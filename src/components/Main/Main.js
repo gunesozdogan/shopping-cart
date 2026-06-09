@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import Product from '../Product/Product';
 import Sidebar from '../Sidebar/Sidebar';
-import styles from './Main.module.css';
+import styles from './Main.module.scss';
 
 const Main = () => {
     const games = useSelector(state => state.store.displayedGames);

@@ -1,30 +1,16 @@
-import styles from './Sidebar.module.css';
+import styles from './Sidebar.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { storeActions } from '../../store/storeSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 const Sidebar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const games = useSelector(state => state.store.games);
     const [currentCategory, setCurrentCategory] = useState('All');
 
-    const categories = [
-        'Action',
-        'Open World',
-        'Singleplayer',
-        'Multiplayer',
-        'Shooter',
-        'Adventure',
-        'FPS',
-        'RPG',
-        'Survival',
-        'Zombies',
-        'Story Rich',
-        'Superhero',
-        'Football',
-        'Sports',
-    ];
+    const categories = [...new Set(games.flatMap(game => game.tags))].sort();
 
     const displayCategory = e => {
         let category = e ? e.target.textContent : 'All';

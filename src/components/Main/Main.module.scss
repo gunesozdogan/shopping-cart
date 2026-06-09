@@ -11,7 +11,6 @@
     min-width: 75rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-    grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
     justify-items: center;
     margin-bottom: 2rem;

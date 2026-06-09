@@ -1,4 +1,4 @@
-import styles from './SliderButton.module.css';
+import styles from './SliderButton.module.scss';
 
 const SliderButton = ({ direction, moveSlide }) => {
     return (

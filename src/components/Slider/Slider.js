@@ -1,11 +1,9 @@
-import styles from './Slider.module.css';
+import styles from './Slider.module.scss';
 import SliderButton from '../SliderButton/SliderButton';
 
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { storeActions } from '../../store/storeSlice';
-
-import { images } from '../../App';
 
 const Slider = () => {
     const sliderGames = useSelector(state => state.store.sliderGames);
@@ -23,7 +21,7 @@ const Slider = () => {
         <div className={styles['slider-container']}>
             <div className={styles.slider}>
                 {sliderGames.map((game, index) => {
-                    return (
+                    return (game ?
                         <div
                             key={game.id}
                             className={
@@ -32,7 +30,7 @@ const Slider = () => {
                                     : styles['slider-inner-container']
                             }
                         >
-                            <img src={images[game.urlName]} alt="game" />
+                            <img src={game?.image} alt="game" />
                             <div
                                 className={styles['game-information-container']}
                             >
@@ -75,7 +73,7 @@ const Slider = () => {
                                     Buy Now
                                 </Link>
                             </div>
-                        </div>
+                        </div> : ''
                     );
                 })}
             </div>

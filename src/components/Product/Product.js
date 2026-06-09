@@ -1,13 +1,12 @@
-import styles from './Product.module.css';
+import styles from './Product.module.scss';
 import { Link } from 'react-router-dom';
-import { images } from '../../App';
 
 const Product = props => {
-    const { name, id, urlName, price, discount } = props.game;
+    const { name, id, urlName, image, price, discount } = props.game;
 
     return (
         <Link to={`/${id}/${urlName}`} className={styles.container}>
-            <img src={images[urlName]} alt={name} />
+            <img src={image} alt={name} />
             <h2 className={styles['product-name']}>{name}</h2>
             <div className={styles['price-container']}>
                 <span className={discount ? styles.discount : styles.hidden}>

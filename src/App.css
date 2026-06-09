@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -21,6 +23,8 @@ body {
     background-color: #1a2938;
     min-width: 100vw;
     min-height: 100vh;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
 }
 
 .outer-container {

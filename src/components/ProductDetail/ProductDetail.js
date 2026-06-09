@@ -1,10 +1,8 @@
-import styles from './ProductDetail.module.css';
+import styles from './ProductDetail.module.scss';
 
 import Recommender from '../Recommender/Recommender';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cartSlice';
-
-import { images } from '../../App';
 
 const ProductDetail = ({ game }) => {
     const dispatch = useDispatch();
@@ -44,7 +42,7 @@ const ProductDetail = ({ game }) => {
         <div className={styles.content}>
             <div className={styles['product-detail-container']}>
                 <div className={styles['product-detail-upper']}>
-                    <img src={images[game.urlName]} alt="game"></img>
+                    <img src={game.image} alt="game"></img>
                     <div className={styles['product-detail']}>
                         <h2>{game.name}</h2>
                         <p>{game.description}</p>

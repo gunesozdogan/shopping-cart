@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { cartActions } from '../../store/cartSlice';
 
-import styles from './Navbar.module.css';
+import styles from './Navbar.module.scss';
 
 const Navbar = () => {
     const dispatch = useDispatch();

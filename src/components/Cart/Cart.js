@@ -2,9 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cartSlice';
 import { Link } from 'react-router-dom';
 
-import { images } from '../../App';
-
-import styles from './Cart.module.css';
+import styles from './Cart.module.scss';
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -65,7 +63,7 @@ const Cart = () => {
                                 to={`/${game.id}/${game.urlName}`}
                                 className={styles['cart-game-container']}
                             >
-                                <img src={images[game.urlName]} alt="game" />
+                                <img src={game.image} alt="game" />
                                 <span className={styles['game-name']}>
                                     {game.name}
                                 </span>
