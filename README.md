@@ -6,4 +6,3 @@ Steam-inspired e-commerce app called "GAME FIELD", built with React and Redux. F
 
 <img src="./public/ss1.png">
 <img src="./public/ss2.png">
-<img src="./public/ss3.png">
