@@ -17,6 +17,16 @@ const Slider = () => {
         dispatch(storeActions.prevSlide());
     };
 
+    const isLoading = !sliderGames.length || !sliderGames[0];
+
+    if (isLoading) {
+        return (
+            <div className={styles['slider-container']}>
+                <div className={styles.skeleton} />
+            </div>
+        );
+    }
+
     return (
         <div className={styles['slider-container']}>
             <div className={styles.slider}>
@@ -36,9 +46,11 @@ const Slider = () => {
                             }
                         >
                             <img
-                                src={game.image}
+                                src={game.imageLarge}
                                 alt={game.name}
                                 className={styles['slide-image']}
+                                loading={index === 0 ? 'eager' : 'lazy'}
+                                fetchpriority={index === 0 ? 'high' : 'auto'}
                             />
                             <div className={styles.overlay}>
                                 <div className={styles.info}>

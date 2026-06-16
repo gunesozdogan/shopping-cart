@@ -9,6 +9,11 @@ import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import ProductPage from './pages/ProductPage';
 
+const resizeImage = (url, width = 600) => {
+    if (!url) return url;
+    return url.replace('/media/', `/media/resize/${width}/-/`);
+};
+
 const getData = async () => {
     const response = await fetch(
         `https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}&page_size=40&ordering=-rating&metacritic=80,100`
@@ -19,7 +24,8 @@ const getData = async () => {
         id: String(game.id),
         name: game.name,
         urlName: game.slug,
-        image: game.background_image,
+        image: resizeImage(game.background_image),
+        imageLarge: resizeImage(game.background_image, 1280),
         price: Number((((game.id % 40) + 20) + 0.99).toFixed(2)),
         discount: game.id % 3 === 0 ? (game.id % 30) + 10 : 0,
         tags: game.genres.map(g => g.name),

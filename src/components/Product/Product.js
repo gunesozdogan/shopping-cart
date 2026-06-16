@@ -6,7 +6,7 @@ const Product = props => {
 
     return (
         <Link to={`/${id}/${urlName}`} className={styles.container}>
-            <img src={image} alt={name} />
+            <img src={image} alt={name} loading="lazy" />
             <h2 className={styles['product-name']}>{name}</h2>
             <div className={styles['price-container']}>
                 <span className={discount ? styles.discount : styles.hidden}>
